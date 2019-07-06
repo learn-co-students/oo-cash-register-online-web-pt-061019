@@ -1,4 +1,4 @@
-# Object Oriented Cash Register
+"After the discount, the total comes to $800."# Object Oriented Cash Register
 
 ## Objectives
 
