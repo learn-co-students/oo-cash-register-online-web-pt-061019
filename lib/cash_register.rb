@@ -10,15 +10,20 @@ class CashRegister
   end
 
   def add_item(title, price, qty=1)
-    self.total += price.to_f * qty
+    # self.total += price.to_f * qty
+    # qty.times { self.items << title }
+    # self.transactions << price.to_f * qty
+    transaction = qty * price
+    self.total += transaction
+    self.transactions << transaction
     qty.times { self.items << title }
-    self.transactions << price.to_f * qty
   end
 
   def apply_discount
     if self.discount
-      self.total = (total * ((100.0 - discount.to_f)/100)).to_i
-      "After the discount, the total comes to $#{self.total}."
+      # self.total = (total * ((100.0 - discount.to_f)/100)).to_i
+      self.total -= self.total * (@discount/100.0)
+      "After the discount, the total comes to $#{self.total.to_i}."
     else
       "There is no discount to apply."
     end
