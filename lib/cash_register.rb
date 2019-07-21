@@ -20,7 +20,7 @@ class CashRegister
   end
 
   def apply_discount
-    if @discount != 0
+    if @discount
       # disc_price = self.total * (@discount.to_f/100)
       # self.total -= disc_price
 
